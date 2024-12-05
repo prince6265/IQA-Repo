@@ -1,13 +1,8 @@
 1. Difference between soap API and REST API 
-2. what is use of pool in .net core application.
-3. How do you handle deadlock in multi-threading.
-4. Reflection in C#?
-5. Difference Between deep copy and shallow  of objects in C#.
-6.  What are extension method in C#?
-7.  What is a generic?
-8.  What is late binding and early binding?
-9.  what is Serialization.
-10. what iis difference between finalized block and finalize 
+2. What are extension method in C#?
+3. What is late binding and early binding?
+4. what is Serialization.
+5. what iis difference between finalized block and finalize 
 >> Managed code directly manage by the CLR and unmanaged code executed by the Operating system directly.
 
 
@@ -1403,3 +1398,27 @@ int[][] jaggedArray = {
 - It does not have access to instance-specific data or methods because it does not operate on an instance.
 - The this keyword refers to the current instance of the class.
 - Since a static method has no instance context, using this in a static method is not allowed.
+### what is use of pool in .net core application.
+- pools are used to manage and reuse the resource efficiently rather than creating and destroying them every time.
+- This improve performance and load on the system.
+### Question :- How do you handle deadlock in multi-threading?
+- it occurs when two more threads are waiting for each other to complete their tasks.
+- we han handle the deadlock by sevral ways.
+  1. Lock Ordering:
+     -which involves ensuring that all threads acquire locks in a consistent order to avoid circular dependencies
+  2. Timeout:
+     -which involves setting a timeout on the lock acquisition to prevent deadlock.
+### Question :- Reflection in C# ?
+- It is a way to interact and inspect with the metadata of types (classes , methods, properties, etc.) at runtime.
+- it allows you to dynamically explore the structure of an object or type and even invoke its member without knowing them at compile time.
+### Question :- Difference Between deep copy and shallow  of objects in C#.
+- a shallow copy and deep copy refer to two different ways of copying objects in C#.
+- Shallow Copy:
+  - A shallow copy creates a new object.
+  - However, it does not duplicate objects inside it; instead, it copies their references (pointers).
+  - So, if the original object contains a reference to another object, both the original and the copied object share the same nested object.
+  - Think of a shallow copy like photocopying a document that contains a reference to another document (e.g., a link). You get a copy of the main document, but the reference (link) still points to the same other document. If you change the other document, both the original and the copy reflect that change.
+- Deep Copy:
+  - A deep copy creates a completely new object and also duplicates all objects inside it.
+  - The original and the copied object become fully separate, with no shared references.
+  - You make a photocopy of the page and create a new sticky note with the same content. Now, you can write on either sticky note without affecting the other.
