@@ -161,9 +161,17 @@ switch (a) {
     console.log("other");
 }
 ```
-## difference between == and ===
-- == is used to compare the values of two operands
-- === is used to compare the values and types of two operands
+## What is the difference between == and === ?
+- == (Loose equality operator): compares two values for equality after performing type coercion.
+- === (Strict equality operator): compares two values for equality without performing type coercion.
+- == and === have different behavior when used to compare different data types. === performs type coercion while == does not.
+     ```javascript
+     let x = 10;
+     let y = "10";
+     console.log(x == y); // Output: true
+     console.log(x === y); // Output: false
+     ```
+- normally === is used to compare the value and type of two variables.
 ## Array:
 - An array is data type that allows you to store multiple values in a single variable.
 ```js 

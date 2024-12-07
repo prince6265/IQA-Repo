@@ -190,17 +190,7 @@ console.log(result); // Output: 57
               break;
     }
     ```
-## What is the difference between == and === ?
-- == (Loose equality operator): compares two values for equality after performing type coercion.
-- === (Strict equality operator): compares two values for equality without performing type coercion.
-- == and === have different behavior when used to compare different data types. === performs type coercion while == does not.
-     ```javascript
-     let x = 10;
-     let y = "10";
-     console.log(x == y); // Output: true
-     console.log(x === y); // Output: false
-     ```
-- normally === is used to compare the value and type of two variables.
+
 ## What the difference between spread vs rest operator ?
 - The spread operator(...) is used to expand or spread elements from an iterable (such as an array, string, or object) into individual elements.
      ```javascript

@@ -1,8 +1,3 @@
-1. Difference between soap API and REST API 
-2. What are extension method in C#?
-3. What is late binding and early binding?
-4. what is Serialization.
-5. what iis difference between finalized block and finalize 
 >> Managed code directly manage by the CLR and unmanaged code executed by the Operating system directly.
 
 
@@ -1422,3 +1417,60 @@ int[][] jaggedArray = {
   - A deep copy creates a completely new object and also duplicates all objects inside it.
   - The original and the copied object become fully separate, with no shared references.
   - You make a photocopy of the page and create a new sticky note with the same content. Now, you can write on either sticky note without affecting the other.
+### What are extension method in C#?
+- IT is a special method in C# that allows you to add new functionality into existing classes, structs & structs without modifying them.
+- This is useful when you want to enhance the behavior of a class but can't directly change its source code, such as it is a part of the .net framework and other third party libraries.
+```C#
+// Define the Extension Method:
+public static class StringExtensions
+{
+    public static int WordCount(this string str)
+    {
+        if (string.IsNullOrWhiteSpace(str))
+            return 0;
+
+        return str.Split(' ', StringSplitOptions.RemoveEmptyEntries).Length;
+    }
+}
+// use the extension method in a program:
+class Program
+{
+    static void Main()
+    {
+        string sentence = "Hello, I am learning C# extension methods!";
+        int wordCount = sentence.WordCount(); // Calls the extension method
+
+        Console.WriteLine($"The sentence has {wordCount} words.");
+    }
+}
+```
+### Wwhat is Serialization.
+- It is process of converting an object into a format that can be easily stored or transmitted and later reconstructed (deserialized) into the original object.
+- the common function  are used are Json, XML, and Binary.
+    - **Save Data**: Store objects in files, databases, or memory.
+    - **Transmit Data**: Send objects over a network (e.g., API calls or inter-process communication).
+    - **Reconstruct Data**: Retrieve and use the stored/transmitted object later.
+### Question :- What is late binding and early binding?
+- Binding is a process of connecting a method call to the method's actual Implementation.
+- **Early Binding(Compile Time Binding)**: 
+  - The method to be called is decided to be compile time.
+  - The compiler knows exactly which method is going to be called. 
+  - FAster because everything is resolved at compile time.
+  - Used in  Strongly typed language like C# fro better type safety
+- **Late Binding (Run Time Binding)**:
+  - The method to be called is decided to be run time.
+  - The compiler does not know exactly which method is going to be called until the program runs. 
+  - Slower because the program figures out the method during execution.
+  - Often used with interfaces, abstract classes, or dynamic programming.
+### Question :- what is difference between finalized block and finalize?
+- it refers to concept related to cleanup managed resource.
+- Finalize method :
+  - it is a protected method provide by the object class in .NET.
+  - It allows you cleanup unmanaged resource.(like file handle, database connection, etc.) when an object is being destroyed by garbage collection.
+  - Automatically called during garbage collection to perform cleanup for objects that haven't been explicitly decomposed.
+  - typically override iy in your class when you need custom cleanup logic.
+- Finalized Block:
+  - refer to using try- final block in our code.
+  - it ensures that cleanup code runs, no matter what happens(like exception)
+  - Use explicitly in code fro cleaning up managed resources, not unmanaged once.
+  - Explicitly written in your code wherever cleanup is needed.
