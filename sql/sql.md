@@ -68,17 +68,64 @@ FROM Employees;
   - A self-referencing table is a table where a row can be connected to another row in the same table.
   - It’s like an employee who reports to another employee within the same company.
 ### Qusetion :- What is self-join ?
+- A self-join is a query that joins a table with itself. It allows you to combine rows from the same table based on a related column. Essentially, you're creating two "versions" of the same table to compare or combine information from one row with another.
 
+- Simple Explanation:
+  - A self-join is when you use the same table twice in a query to compare or match data within that table.
+  - It's like when you compare two employees from the same company or two products in the same inventory.
 ### Qusetion :- Explain the between clause ?
+- The BETWEEN clause in SQL is used to filter the results by checking if a value lies within a specified range. It allows you to check if a column’s value is within two values, and it can be used with numbers, dates, or text.
 
+- Simple Explanation:
+  - The BETWEEN clause is like saying, "Give me the records where this value is between these two limits."
+  - It checks if the value in a column is greater than or equal to the lower limit and less than or equal to the upper limit.
+```SQL
+SELECT column_name
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+```
 ### Qusetion :- Can inner Subquery return multiple results ?
+- Yes, an inner subquery (also known as a nested query) can return multiple results. An inner subquery is a query inside another query, and it can return a set of values that the outer query will use for further processing.
 
+- Simple Explanation:
+    - An inner subquery is a query within another query, and it can return multiple rows (a list of values) that the outer query can use.
+    - It’s like asking for a list of items (multiple results) from one database and then using that list to find more specific details in another part of the database.
+```SQL
+SELECT Name
+FROM Employees
+WHERE EmployeeId IN (
+    SELECT EmployeeId
+    FROM Sales
+    GROUP BY EmployeeId
+    HAVING COUNT(SaleId) > 1
+);
+```
 ### Qusetion :- What is Co-related Query ?
+- A correlated subquery is a type of subquery (a query within another query) where the inner query refers to columns from the outer query. This means the inner query is dependent on the outer query and can return different results for each row processed by the outer query.
 
+- Simple Explanation:
+    - A correlated subquery is like asking a question that depends on the information from the outer query.
+    - The inner query is re-executed for each row of the outer query, using values from that row in the subquery.
 ### Qusetion :- Differentiate between Joins and Subquery ?
-
+- Both Joins and Subqueries are used to combine or filter data from multiple tables in SQL. However, they work in different ways.
+  - JOINS
+    - A Join combines rows from two or more tables based on a related column between them.
+    - Joins allow you to bring together columns from different tables in a single result set.
+    - se joins when you need to combine data from multiple tables based on a relationship.
+  - Subqueries
+    - A Subquery is a query inside another query. It can be used to retrieve a single value or a set of values that will be used by the outer query.
+    - The subquery is executed first, and the result is then passed to the outer query.
+    - Use subqueries when you need to filter data or perform an operation based on the result of another query.
 ### Qusetion :- Performance Joins vs Subquery?
-
+- When it comes to performance, both Joins and Subqueries have their advantages and drawbacks, depending on the use case and how the database engine processes them. Here's a simple explanation of how performance can vary between the two:
+- Joins Performance: 
+  1. Efficient for large datasets: Joins are often faster for combining large datasets, especially when the relationship between tables is indexed properly (e.g., using primary and foreign keys).
+  2. One-time operation: Joins are typically processed once for each row in the result set, which is generally more efficient compared to executing a subquery for each row.
+  3. Works well with indexed data: If the columns used in the join condition are indexed, the query performance can be very fast.
+- Subquery Performance:
+  1. May be less efficient: Subqueries can be slower, especially when used in the WHERE clause, as the database has to execute the inner query first for each row of the outer query.
+  2. Repeated execution: For each row in the outer query, the inner subquery is executed. This can result in repeated calculations, leading to performance issues, especially on large datasets.
+  3. May be optimized by the database: Some database engines optimize subqueries internally, turning them into joins or temporary tables, but not all databases do this efficiently.
 ### Qusetion :- Find NTH Highest Salary in SQL.
 
 ### Qusetion :- Select the top nth highest salary using correlated Queries?
