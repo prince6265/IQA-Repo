@@ -1,8 +1,8 @@
 1. What is view state.
 2. Difference between soap API and REST API 
 ### Question :- what is post back?
-- it is the process where web Browser sends data back to the server for processing and then reloads or update itself. It is like a conversation between the browser and the server where the server taken an action and sends a response back to teh browser.
-## Question :- Differentiate between ASP .NET Webforms vs MVC vs MVC core ?
+- it is the process where web Browser sends data back to the server for processing and then reloads or update itself. It is like a conversation between the browser and the server where the server taken an action and sends a response back to the browser.
+## Question :- Differentiate between ASP .NET Web-forms vs MVC vs MVC core ?
 - ASP.NET WebForms, ASP.NET MVC, and ASP.NET Core MVC are three different ways to build web applications using Microsoft technologies. ASP.NET WebForms is the oldest of the three and works in a way that feels similar to building desktop applications. It lets you drag and drop controls onto a page and handles a lot of the web details for you, like keeping track of what the user is doing. However, this can make the pages slower and harder to customize.
 
 - ASP.NET MVC is different because it focuses on separating the different parts of the application, like the logic, the user interface, and the data. This makes it easier to manage and test large applications. It also gives you more control over the HTML and the URLs, which can help make your website faster and easier to use.
@@ -364,13 +364,13 @@ Use of Standard HTTP Methods: RESTful services use the HTTP methods (GET, POST, 
 - Host Builder:
 - Host Builder is a static class that provides two methods (CreateDefaultBuilder) when we call these, they will add some features to Asp.net core applications. One method without a parameter and the other method takes a string array as an argument.
 - The Host Builder provides two methods for creating instances of pre-configured IHostBuilder(Interface) which is available inside the Host class.
-1. Host:
+> Host:
 - Host is a static class that can be used for creating an instance of IHostBuilder pre-configured defaults.
-1. CreateHostBuilder ():
+> CreateHostBuilder ():
 - The CreateHostBuilder () method is responsible for configuring and creating an instance of the IHostBuilder which is used to set up the web host for the application. The web host is the environment in which the application runs, managing requests, services, configuration, logging, and more.
 - This is nothing but a name of method we can also use any name instead of CreateHostBuilder ().
 
-1. CreateDefaultBuilder(): 
+> CreateDefaultBuilder(): 
 - It is available inside the Host class.
 - By using the CreateDefaultBuilder method we will get the in-built support of dependency injection.
 - It loads app configuration from “appsettings.json” and “appsettings.[EnvironmentName].json”, configuration is nothing but the settings that our application uses.
@@ -379,28 +379,28 @@ Use of Standard HTTP Methods: RESTful services use the HTTP methods (GET, POST, 
 - This method is use to read the environment variable.
 - Set the default path of the application.
 
-1. ConfigureWebHostDefaults():
+> ConfigureWebHostDefaults():
 - This is the actual method that convert a console application into the web application.
 - It is use to configure a HostBuilder with defaults for hosting a web app.
 - Enables the IIS Integration and kestrel server.
 - Also add the ForwardedHeaders middleware if ASPNETCORE\_FRWARDEDHEADERS\_ENABLED=True.
 
-1. webBuilder:
+> webBuilder:
 - The WebHostBuilder is typically used in the Program.cs file of an ASP.NET Core application to configure various aspects of the web application, such as setting up the server, configuring services, and defining how requests and responses are handled. It's part of the process of setting up and "building" your web application.
 - Because with the help of web builder here we are calling the Startup class.
 
     
 1. App.UseRouting():
 - It enables the routing into our application.
-1. Routing:
+> Routing:
 - It is used to inspect the http request and then map that http request to the controller’s action method.
 1. Conventional Routing:
-- It is default routing behaviour which application follows, in this first look for the controller then action method. According to URL received by the user.
-1. Attribute Routing:
+- It is default routing behavior which application follows, in this first look for the controller then action method. According to URL received by the user.
+2. Attribute Routing:
 - Attribute routing allows us to define routes directly on our controller and action methods using the **Route** Attributes.
 - It gives us more control over the URLs by defining routes directly at action methods or Controllers in our Asp.Net Core application.
 - With Attribute Routing, we can specify route templates for individual action methods.
-1. MapGet and Map:
+> MapGet and Map:
 - In ASP.NET Core MVC, the Map and MapGet methods are used to configure routing for specific HTTP methods and paths.
 - Map is general purpose method which are applicable for various HTTP verbs(Get, Put, Post, Patch, and Delete).
 - But MapGet is applicable for a specific type of HTTP verb(Get) only. 
@@ -490,6 +490,8 @@ By default, the ASP.NET MVC framework treats all public methods of a controller 
 ## Question :- TempData :
 - TempData is used to transfer data from the view to the controller, the controller to the view, or from an action method to another action method of the same or a different controller. 
 - TempData temporarily saves data and deletes it automatically after a value is recovered.
+
+![alt text](image-2.png)
 ## Question :- Session:
 - In ASP.NET Core MVC, sessions are a mechanism for storing and managing user-specific data on the server side across multiple HTTP requests for a given session
 - A session is responsible for storing user data in the web server when browsing a web application. In general, web applications operate on the stateless HTTP Protocol, where each HTTP request is independent.
@@ -503,7 +505,7 @@ By default, the ASP.NET MVC framework treats all public methods of a controller 
 - It is use to simplifies the process of generating elements in views.
 ## Question :- Memory Cache: 
 - It Is used to store something in memory that is being used frequently to provide better performance.
-- Filter and types of filters in .Net Core MVC application.
+## Question :- Filter and types of filters in .Net Core MVC application.
 - The Filters in ASP.NET Core MVC Framework are the attribute that allows us to inject some logic or code which is going to be executed either before or after an action method is invoked.
 
 ## Question :- Types of filters:

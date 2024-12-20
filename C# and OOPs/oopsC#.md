@@ -1,7 +1,4 @@
->> Managed code directly manage by the CLR and unmanaged code executed by the Operating system directly.
-
-
-#### Question :- Explain difference between .NET and C# ? 
+### Question :- Explain difference between .NET and C# ? 
 - .NET is the framework/platform that provides the environment and tools to develop and run applications, and C# is a programming language used to write those applications within the .NET environment.
 
 ### Question :- .NET Framework vs .NET Core vs .NET 5.0
@@ -101,6 +98,13 @@ CLR (Common language runtime):
 - CLS deals with different behaviour of the language. For Example: If I want to consume the VB.Net code inside the C#, here CLS came into picture. because C# is a case sensitive language while VB.Net is not a case sensitive language. For this CLS is set of guidelines that is used to reused the code in different programming language.
 - It is a part of CLR, CLR in .NET Framework will execute all programming language code. This is possible because CLR has its own language specification (syntactical rules) which are common to all .NET Supported Programming Languages. At the time of compilation, every language compiler should follow this language specification of CLR and generate the MSIL code. This language specification of CLR is common for all programming languages and this is known as **Common Language Specifications (CLS).**
 
+### Question :- What is Assembly ?
+- Assembly is a unit if deployment like EXE or a DLL file.
+- When you complete the coding a build teh solution the .Net Framework convert it into assembly which you can inside bin folder.
+> Types of Assembly
+1. private assembly
+2. public(Shared) assembly
+3. satellite assembly
 ### Question :- Difference between Stack vs Heap ?
 > Stack 
 
@@ -116,9 +120,25 @@ When a function or method is called, a new block (or "stack frame") is created o
 - Memory on the heap is managed by the Garbage Collector (GC). The GC automatically de allocates memory that is no longer referenced by any part of the program, freeing up space on the heap.
 - Data on the heap persists as long as it is referenced by any part of the program. Once there are no references to a block of memory on the heap, it becomes eligible for garbage collection.
 - Objects, arrays, and reference types (like class instances) are stored on the heap.
+### Question:- What is Tuple?
+- Tuple is a data structure in C# there we can store fixed number of items of different types together in a single variable. It's like a container that groups related values into one unit. Think of it as a lightweight, simpler version of a class or a struct.
+```C#
+class Program
+{
+    static void Main()
+    {
+        // Create a tuple to store student data
+        var student = ("Alice", 85, true);
+
+        // Access tuple elements
+        Console.WriteLine($"Name: {student.Item1}");   // Name : Alice
+        Console.WriteLine($"Score: {student.Item2}");  // Score : 85
+        Console.WriteLine($"Passed: {student.Item3}"); // Passed : True
+    }
+}
+```
 ### Question :- What are Value types & Reference types?
 >  Value types 
-> 
 Memory Allocation:
 - Value types store their data directly in the memory where the variable is allocated. This means that the actual value is stored in the stack (or inline in the case of fields within objects on the heap).
 Copying:
@@ -200,6 +220,24 @@ The Generic Collection Classes are implemented under the System.Collections.Gene
 - SortedSet<T>: It represents a collection of objects that are maintained in sorted order.
 - SortedDictionary<TKey, TValue>: It represents a collection of key/value pairs that are sorted on the key.
 - LinkedList<T>: It represents a doubly linked list.
+### Question :- What is Auto Mapper in C# ?
+- AutoMapper is a popular open-source library in C# that simplifies mapping data between different classes or objects. It helps eliminate repetitive and error-prone code when copying data from one object to another. AutoMapper is especially useful in scenarios like mapping database entities to DTOs (Data Transfer Objects) or ViewModel objects.
+- The AutoMapper in C# is a mapper between two objects. That is, AutoMapper is an Object-Object Mapper. It maps the properties of two different objects by transforming the input object of one type to the output object of another. 
+### Question:- What is Event-Bubbling ?
+- vent bubbling in C# refers to the process where an event triggered by a child element is passed (or "bubbled up") to its parent elements. In other words, the event starts from the most specific (child) element and moves up through the hierarchy to more general (parent) elements. This concept is most commonly encountered in GUI applications like WPF or web-based frameworks.
+> Real ife example:
+  - Imagine you have a party with multiple levels of hierarchy:
+    - Parent: The house
+    - Child: A room in the house
+    - Grandchild: A table inside the room
+  - Now, someone accidentally knocks a glass off the table. This event is noticed first by the table, then the room, and finally the house (if the table and room do not handle it specifically).
+### Question  :- What is view State?
+- ViewState in ASP.NET is a mechanism used to maintain the state of controls on a web page across postbacks. It stores the state of a web page (like the values of form fields, drop-down selections, etc.) between user interactions so that the page remembers what it looked like after it is refreshed or submitted.
+
+> Real-Life Example:
+  - Imagine you're filling out an online shopping form to order a product. You type your name, select the product, and choose the quantity. Before clicking "Submit," you accidentally refresh the page.Normally, you'd lose all your entered information after the refresh. But with ViewState, the page reloads and retains the entered data so you don't have to start over.
+### Question :- What is rendering?
+- rendering is the process of displaying something on a screen so that people can see and interact with it. In programming, rendering is when the computer takes the code (like HTML, CSS, and JavaScript) and turns it into a visual output, like a webpage or an app interface.
 ### Question :- a private virtual method can be overridden in a derived class ?
 - In C#, you cannot declare a private method as virtual because it would contradict the purpose of each keyword.
 - a private method can not be accessible outside its class so making it as virtual does not make any sense.
@@ -210,7 +248,7 @@ The Generic Collection Classes are implemented under the System.Collections.Gene
 - Virtual Method:
     - A virtual can be overridden in a derived class.
     - fro overriding the method must be accessible in the derived class (at least protected or public).
-### Question :- Differnce between string and string Builder ?
+### Question :- Difference between string and string Builder ?
 - Both are used to work with text but there is some difference between them.
 - string is a immutable string means we can not change the string once it created. on the other hand string builder is a mutable string means we can change the string once it created.
 - String is used for simple or infrequent text manipulation and String Builder is used for more complex text manipulation such as loop or when we are dealing with large amount of data.
@@ -1025,9 +1063,6 @@ i = int(obj);
 
 **Note:** We should always need to avoid Boxing and Unboxing in C# due to performance degradation in application development.
 
-### Question :- Explain Generations ?
-### Question :- What is GC0,GC1, and GC2 ?
-### Question :- Why do we need Generations ?
 ### Question :- Which is the best place to clean unmanaged objects ?
 ### Question :- How does GC behave when we have a destructor ?
 ### Question :- What do you think about empty destructor ?
@@ -1387,6 +1422,31 @@ int[][] jaggedArray = {
 ### Question :-  What is multi-casting delegate?
 - A multicast delegate in C# is a delegate that can hold references to multiple methods. When the delegate is invoked, all the methods in its invocation list are executed in the order they were added.
 - Multicast delegates are not inherently thread-safe. If multiple threads modify the invocation list, you must use synchronization techniques.
+### Question :- What is this keyword in C#?
+- This keyword is use to refer current instance of the class.
+- This keyword avoids the name confusion between class fields and name constructor parameters.
+```C#
+class Student{
+    public int id;
+    public string name;
+    public Student(int id, string name){
+        id = id;       
+        name = name;
+    }
+}
+```
+- Here it creates confusion for compilers which id and name is class field and which id and name is constructor parameter
+- In order t solve this problem we use this keyword.
+```C#
+class Student{
+    public int id;
+    public string name;
+    public Student(int id, string name){
+        this.id = id;       
+        this.name = name;
+    }
+}
+```
 ### Question :- can we use this keyword into static method?
 - No, we cannot use this keyword into static method.
 - A static method belongs to the class itself, not an instance of the class.
