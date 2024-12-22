@@ -1,5 +1,5 @@
-1. What is view state.
-2. Difference between soap API and REST API 
+### Question :- What is view state.
+### Question :- Difference between soap API and REST API 
 ### Question :- what is post back?
 - it is the process where web Browser sends data back to the server for processing and then reloads or update itself. It is like a conversation between the browser and the server where the server taken an action and sends a response back to the browser.
 ## Question :- Differentiate between ASP .NET Web-forms vs MVC vs MVC core ?

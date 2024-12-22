@@ -111,7 +111,7 @@ WHERE EmployeeId IN (
   - JOINS
     - A Join combines rows from two or more tables based on a related column between them.
     - Joins allow you to bring together columns from different tables in a single result set.
-    - se joins when you need to combine data from multiple tables based on a relationship.
+    - Use joins when you need to combine data from multiple tables based on a relationship.
   - Subqueries
     - A Subquery is a query inside another query. It can be used to retrieve a single value or a set of values that will be used by the outer query.
     - The subquery is executed first, and the result is then passed to the outer query.
@@ -134,14 +134,28 @@ WHERE EmployeeId IN (
 
 ### Qusetion :- Performance comparison of all the methods.
 
-### Qusetion :- Normalization.
-
 ### Qusetion :- types different operators available in SQL.
-
+- In SQL, operators are symbols used to perform operations on data. They are essential for filtering, comparing, and manipulating data in queries.
+![alt text](image-2.png)
 ### Qusetion :- user defined function in sql.
-
+- A User-Defined Function (UDF) is a function that you can create in SQL to perform a specific task that can be reused multiple times in your SQL queries. It allows you to extend SQL’s built-in capabilities with custom logic and calculations.
+- Imagine you are often calculating a discount on products in your sales system, and you need to apply the same logic in multiple queries. Instead of repeating the same calculation every time, you can create a UDF that calculates the discount, and simply use that function in your queries.
+```SQL
+CREATE FUNCTION CalculateDiscountedPrice (@Price DECIMAL, @DiscountPercentage DECIMAL)
+RETURNS DECIMAL
+AS
+BEGIN
+    RETURN @Price - (@Price * @DiscountPercentage / 100)
+END;
+```
 ### Qusetion :- Difference between Query and sub query.
-
+1. Query (Main Query)
+  - A query is a standalone SQL statement that is used to retrieve data from the database. It can be as simple as selecting a set of records, updating, inserting, or deleting data.
+   - A query does not rely on another query to get its result.
+2. Subquery (Nested Query)
+   - A subquery is a query inside another query. It’s used to provide an intermediate result that can be used by the outer query.
+   - Subqueries can be placed in WHERE, FROM, or SELECT clauses of the main query.
+   - Subqueries are useful when you need to perform additional filtering or aggregation based on the result of another query.
 ### Qusetion :- why we use the stored procedure in sql.
 - Stored procedures in SQL Server are used to improve the efficiency, security, and manageability of database operations.
 ### Qusetion :- Importance of view in a database.
