@@ -1534,3 +1534,12 @@ class Program
   - it ensures that cleanup code runs, no matter what happens(like exception)
   - Use explicitly in code fro cleaning up managed resources, not unmanaged once.
   - Explicitly written in your code wherever cleanup is needed.
+
+## Delegate
+- It is a type safe function pointer.
+- A delegate holds the reference of a method and then call that method for the execution
+  1. Define a delegate
+
+### Question :- var vs dynamic ?
+- var : var determine things during the compile time, and it is statically typed.
+- dynamic : dynamic determine things at runtime, and it is dynamically typed.

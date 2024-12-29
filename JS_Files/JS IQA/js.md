@@ -8,8 +8,25 @@
 ## Client side vs server side
 - Client Side is a device, application, or software component that request and consumes services or resource from a server.
 - A server is a device, Computer, or Software application that provides services, resources, or function to a client.
-- 
 ## Difference between static type and dynamic type language
+> static Type:
+-  In statically typed languages, the type of a variable is determined at compile time, meaning you must declare the type of each variable before using it.
+```C#
+int age = 25;
+string name = "John";
+```
+- In this example, the types of age and name are explicitly declared as int and string, respectively. If you try to assign a string to age, the compiler will throw an error before the program runs.
+> Dynamic Type:
+- In dynamically typed languages, the type of a variable is determined at runtime, not compile time. You don’t need to declare the type explicitly, and the language can change the type of a variable during execution.
+```javascript
+let age = 25;
+age = "John";  // Now age is a string
+```
+- In this example, age starts as an integer, but later it is reassigned as a string, which is perfectly valid in a dynamically typed language.
+> Note:
+- Static typing catches errors during compilation, making it easier to spot bugs before the code is executed, while dynamic typing catches errors at runtime.
+- Dynamic typing offers more flexibility since variables can change types during execution, but it can lead to more runtime errors if types are not handled properly.
+- Static typing can improve code readability and maintainability by clearly defining variable types, while dynamic typing requires more careful handling of types at runtime.
 ## Json :
 - Json is a syntax for storing and transferring data. It is a JavaScript object notation. It is a lightweight data interchange format that is easy to understand and use.
 - it consist of key value pair.
@@ -583,7 +600,7 @@ functionName();
 console.log(userName);              // undefined
 ```
 ## closure:
-- A closure is a js function that remembers nad can access its own scope, the scope of the parent function, and the global functions even after the parent function has finished executing.
+- A closure is a js function that remembers and can access its own scope, the scope of the parent function, and the global functions even after the parent function has finished executing.
 ```js
 function OuterFunction (){
     var outerVariable = 42;

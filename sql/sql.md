@@ -166,7 +166,6 @@ END;
 - One record in Table A can be related to multiple records in Table B. However, each record in Table B is related to only one record in Table A.
 - Imagine a parent-child relationship.
 - One "parent" can have multiple "children," but each "child" belongs to only one "parent."
-
 ### Qusetion :- One-to-One (1:1) Relationship
 - One record in Table A corresponds to exactly one record in Table B and vice versa.
 ### Qusetion :- Many-to-Many (M:N) Relationship
