@@ -1064,20 +1064,20 @@ i = int(obj);
 **Note:** We should always need to avoid Boxing and Unboxing in C# due to performance degradation in application development.
 
 ### Question :- Which is the best place to clean unmanaged objects ?
-### Question :- How does GC behave when we have a destructor ?
-### Question :- What do you think about empty destructor ?
-### Question :- Explain the Dispose Pattern?
-### Question :- Finalize vs Destructor ?
+- with the help of IDispose interface or finalize method we can clean the unmanaged object.
+- Unmanaged object such as file handle and database connection is not automatically cleaned by GC. failing to clean unmanaged memory lead to memory leak and performance issues.
 ### Question :- What is the use of using keyword ?
+- The using keyword in C# is used for resource management, specifically for working with objects that consume resources, such as files, database connections, network connections, or any other system resources that need to be cleaned up after use.
 ### Question :- Can you force Garbage collector ?
-### Question :- Is it a good practice to force GC ?
-### Question :- How can we detect a memory issues ?
-### Question :- How can we know the exact source of memory issues ?
+- You can force the garbage collector using GC.Collect(), but you generally shouldn't because the GC works best when left to its own schedule. It's like micromanaging someone who already knows their job well—use it only when absolutely necessary, such as during testing or after releasing unmanaged resources.
 ### Question :- What is a memory leak ?
+- A memory leak is like forgetting to return something you borrowed, leaving it unavailable for others. In programming, it’s when a program keeps using memory unnecessarily, leading to slowdowns or crashes. Proper coding practices, like releasing resources and managing references carefully, can help prevent memory leaks.
 ### Question :- Can .NET Application have memory leak as we have GC?
-### Question :- How to detect memory leaks in .NET applications ?
+- Yes, In case of unmanaged resource we can have memory leak.
 ### Question :- Explain weak and strong references ?
-### Question :- When will you use weak references ?
+- In programming, weak references and strong references describe how objects in memory are accessed and how that affects their lifecycle in garbage collection.
+- A strong reference means that as long as something is holding onto an object, the garbage collector cannot remove it. The object will stay in memory because it’s being actively used or held.
+- A weak reference means that the object is referenced, but it’s not considered “actively in use.” The garbage collector can clean it up if memory is needed, even though the weak reference still points to the object.
 
 ### Question :- What is COM (Component Object Model):
 - It is one of the Microsoft’s technologies where we can develop applications as well as web applications.
