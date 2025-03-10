@@ -422,3 +422,100 @@ static void Main(string[] args)
 ```
 ### 13. Character Occurrence in a String
 - Check the length of the input message and if it is greater than 0, then using for loop we calculate the number of occurrences of each character.
+```Csharp
+public static void characterOccuranceString()
+{
+    Console.WriteLine("Please enter a string to check occurance");
+    string valueString = Console.ReadLine();
+    int countChar  = 0;
+    for (int i = 0; i < valueString.Length; i++)
+    {
+        countChar += 1;
+    }
+    Console.WriteLine($"{countChar} is the count of given value!");
+}
+```
+
+
+### 16.	How to reverse the order of words in a given string.
+```Csharp
+public static void ReverseOrderofWords()
+{
+    string input = "Hello World from C#";
+    string reversedString = "";
+    int end = input.Length;
+
+    for (int i = input.Length - 1; i >= 0; i--)
+    {
+        if (input[i] == ' ' || i == 0)
+        {
+            int start = (i == 0) ? i : i + 1;
+            for (int j = start; j < end; j++)
+            {
+                reversedString += input[j];
+            }
+            if (i > 0)
+            {
+                reversedString += " ";
+            }
+            end = i;
+        }
+    }
+
+    Console.WriteLine(reversedString);
+}
+// C# from World Hello
+```
+### 17.	How to reverse each word in a given string.
+```CSharp
+public static void reverseEachWord()
+{
+    string valueString = "Hello from C# ";
+    string reversedValueString = "";
+    int start = 0;
+    for (int i =0 ; i < valueString.Length; i++)
+    {
+        if (valueString[i] == ' ' )
+        {
+            int end = i;
+            for (int j = end  -1; j >= start; j --)
+            {
+                reversedValueString += valueString[j];
+            }
+            reversedValueString += " ";
+            start = end  + 1;
+        }
+    }
+    Console.WriteLine(reversedValueString);
+}
+// olleH morf #C
+```
+### 18.	How to count the occurrence of each character in a string.
+```CSharp
+public static void countEachWord()
+{
+    string valueString = "Hello from C# ";
+    int start = 0;
+    for (int i =0 ; i < valueString.Length; i++)
+    {
+        if (valueString[i] == ' ' )
+        {
+            int count = i - start; 
+            Console.Write(count + ",");
+            start = i + 1; 
+        }
+    }
+}
+// 5,4,2
+```
+### 19.	How to remove duplicate character from a string.
+### 20.	How to find all possible substring of a given string.
+### 21.	How to perform left circular rotation of an array.
+### 22.	How to perform right circular rotation of an array.
+### 23.	How to find if a positive no is a prime no or not.
+### 24.	How to find sum digit of a positive integer.
+### 25.	How to find second largest integer in an array using only one loop.
+### 26.	How to find third largest integer in an array using only one loop.
+### 27.	How to convert a two-dimensional array into a one-dimensional array.
+### 28.	How to convert one-dimensional array into a two-dimensional array.
+### 29.	How to find the angle between hour and minute hands of a clock at any given time.
